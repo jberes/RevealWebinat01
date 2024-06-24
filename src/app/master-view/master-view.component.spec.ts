@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { IgxSimpleComboModule, IgxInputGroupModule } from '@infragistics/igniteui-angular';
+import { IgxSimpleComboModule, IgxInputGroupModule } from 'igniteui-angular';
 import { MasterViewComponent } from './master-view.component';
 
 describe('MasterViewComponent', () => {
