@@ -35,18 +35,11 @@ export class MasterViewComponent implements OnInit, OnDestroy, AfterViewInit {
     $.ig.RevealSdkSettings.ensureFontsLoaded()
       .then(() => {
         $.ig.RevealSdkSettings.setBaseUrl(this.revealServerUrl);
-
-        $.ig.RVDashboard.loadDashboard("dashboardName!", (dashboard: any) => {
-          const _revealDashBoard = new $.ig.RevealView(this.revealDashBoard.nativeElement);
-          _revealDashBoard.dashboard = dashboard;
-          _revealDashBoard.canCopyVisualization = false;
-          _revealDashBoard.canDuplicateVisualization = false;
-        });
       })
       .catch((err: any) => {
         console.warn('An error occurred during Reveal setup.', err);
-      })
-;  }
+      });  
+    }
 
   private setRevealTheme() {
     const style = window.getComputedStyle(document.body);
@@ -70,5 +63,11 @@ export class MasterViewComponent implements OnInit, OnDestroy, AfterViewInit {
 
   public singleSelectComboSelectionChanging(event: ISimpleComboSelectionChangingEventArgs) {
     this.dashboardName = event.newValue as string;
+    $.ig.RVDashboard.loadDashboard(this.dashboardName, (dashboard: any) => {
+      const _revealDashBoard = new $.ig.RevealView(this.revealDashBoard.nativeElement);
+      _revealDashBoard.dashboard = dashboard;
+      _revealDashBoard.canCopyVisualization = false;
+      _revealDashBoard.canDuplicateVisualization = false;
+    });
   }
 }
