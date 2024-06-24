@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { ISimpleComboSelectionChangingEventArgs } from '@infragistics/igniteui-angular';
+import { ISimpleComboSelectionChangingEventArgs } from 'igniteui-angular';
 import { Subject, takeUntil } from 'rxjs';
 import { DashboardNames } from '../models/reveal-webinar-demo/dashboard-names';
 import { RevealWebinarDemoService } from '../services/reveal-webinar-demo.service';
