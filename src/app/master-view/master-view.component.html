@@ -1,0 +1,8 @@
+<div class="column-layout group">
+  <igx-simple-combo type="border" [data]="revealWebinarDemoDashboardNames" valueKey="dashboardFileName" displayKey="dashboardTitle" (selectionChanging)="singleSelectComboSelectionChanging($event)" class="single-select-combo">
+    <label igxLabel>Select Dashboard</label>
+  </igx-simple-combo>
+</div>
+<div class="column-layout group_1">
+  <div #revealDashBoard class="reveal-dash-board"></div>
+</div>
